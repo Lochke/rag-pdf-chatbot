@@ -1,0 +1,21 @@
+# Secrets - QUAN TRỌNG: không commit API key
+.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.egg-info/
+
+# Vector store data (tạo lại được, không cần lưu vào git)
+backend/chroma_data/
+chroma_data/
+
+# OS / editor
+.DS_Store
+.vscode/
+*.swp
+
+# Streamlit
+.streamlit/secrets.toml
