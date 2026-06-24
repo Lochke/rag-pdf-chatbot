@@ -30,17 +30,17 @@ Chatbot cho phép người dùng upload file PDF và hỏi đáp trực tiếp v
                                           │ └─────────────┘  │
                                           └────────┬─────────┘
                                                    │
-                                            OpenAI API (GPT)
+                                            Google Gemini API
 ```
 
 ## Công nghệ sử dụng
 
 | Thành phần | Công nghệ |
 |---|---|
-| LLM | Google Gemini (`gemini-3-flash`) |
+| LLM | Google Gemini (`gemini-2.5-flash-lite`) |
 | Framework AI | LangChain |
 | Vector Database | Chroma |
-| Embeddings | Google Generative AI Embeddings |
+| Embeddings | HuggingFace |
 | Backend API | FastAPI |
 | Frontend | Streamlit |
 | Containerization | Docker, Docker Compose |
