@@ -13,8 +13,8 @@ from pathlib import Path
 
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
+# from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.chains import ConversationalRetrievalChain
@@ -63,8 +63,9 @@ def process_pdf_and_create_chain(session_id: str, pdf_path: str) -> int:
     if session_dir.exists():
         shutil.rmtree(session_dir)  # xoá vector store cũ nếu upload PDF mới
 
-    embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
+    embeddings = GoogleGenerativeAIEmbeddings(
+        model="models/text-embedding-004",
+        google_api_key=os.environ.get("GOOGLE_API_KEY"),
     )
     vectorstore = Chroma.from_documents(
         documents=chunks,
