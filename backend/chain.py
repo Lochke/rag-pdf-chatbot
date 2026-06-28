@@ -64,7 +64,7 @@ def process_pdf_and_create_chain(session_id: str, pdf_path: str) -> int:
         shutil.rmtree(session_dir)  # xoá vector store cũ nếu upload PDF mới
 
     embeddings = GoogleGenerativeAIEmbeddings(
-        model="models/text-embedding-004",
+        model="models/gemini-embedding-001",
         google_api_key=os.environ.get("GOOGLE_API_KEY"),
     )
     vectorstore = Chroma.from_documents(
