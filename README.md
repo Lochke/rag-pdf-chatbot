@@ -40,7 +40,7 @@ Chatbot cho phép người dùng upload file PDF và hỏi đáp trực tiếp v
 | LLM | Google Gemini (`gemini-2.5-flash-lite`) |
 | Framework AI | LangChain |
 | Vector Database | Chroma |
-| Embeddings | HuggingFace |
+| Embeddings | Google Generative AI (gemini-embedding-001) |
 | Backend API | FastAPI |
 | Frontend | Streamlit |
 | Containerization | Docker, Docker Compose |
